@@ -27,7 +27,7 @@ int main() {
   }
   fin.close();
   for (unsigned int k = 0 ; k < zaehler.size() ; ++k) {
-    // cout << k << ": " << zaehler[k] << endl;
+    cout << k << ": " << zaehler[k] << endl;
   }
 
 // 1 b)
@@ -46,7 +46,7 @@ int main() {
     p = 234 * poisson(mu, k);
     sum_p += p;
     fout2 << k << " " << zaehler[k] << " " << p <<  endl;
-    cout <<  k << "\t" << zaehler[k] << "\t" << p <<  endl;
+    // cout <<  k << "\t" << zaehler[k] << "\t" << p <<  endl;
   }
   fout2.close();
   cout << "sum_p = " << sum_p << endl; 
