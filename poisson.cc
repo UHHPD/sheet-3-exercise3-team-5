@@ -7,7 +7,7 @@
 
 double poisson(double mu, int k) {
   double p = 0.0;
-  p = pow(mu, k) * exp(-1.0 * mu)
+  p = pow(mu, k) * exp(-1.0 * mu) / tgamma(k + 1.0);
   return p;
 }
 
