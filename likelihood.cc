@@ -43,33 +43,36 @@ int main() {
     double p;
     ofstream ofi1("likelihood.txt");
     for(int j = 0; j <= 60; j++){
-      mu = 0.0 + j / 60.0;
+      mu = 0.0 + j / 10.0;
       p = prob(daten, mu);
       ofi1 << mu << " " << p << endl;
     }
     ofi1.close();
+    // gnuplot: plot "likelihood.txt" using 1:2 with lines
 
     // exercise 2c
     double l, ll;
     ofstream ofi2("nll.txt");
       for(int j = 0; j <= 60; j++){
-      mu = 0.0 + j / 60.0;
+        mu = 0.0 + j / 10.0;
         l = prob(daten, mu);
         ll = -2.0 * log(l);
         ofi2 << mu << " " << ll << endl;
       }
     ofi2.close();
+    // gnuplot: plot "nll.txt" using 1:2 with lines 
 
     // exercise 2d
     ofstream ofi3("deltanll.txt");
     double lmin_mu = -2.0 * log(min_mu);
       for(int j = 0; j <= 100; j++){
-      mu = 2.9 + j / 100.0;
+        mu = 2.9 + j / 100.0;
         l = prob(daten, mu);
         ll = -2.0 * log(l);
         ofi3 << mu << " " << ll - lmin_mu << endl;
       }
     ofi3.close();
+    // gnuplot: plot [2.95:3.3][] "deltanll.txt" using 1:2 with lines, 1.0
     cout << "mean = " << mean << " sigma = " << sigma << endl;
 }
 /*
