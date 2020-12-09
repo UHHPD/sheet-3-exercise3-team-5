@@ -85,9 +85,13 @@ int main() {
     
     // exercise 2e
     // Our job for Wednesday result should be 233.942
+    // Tobi's Numerator: 7.76841e-195
     double ratio, z;
     int ndof = 233;
+    mu = 3.11538;
     ratio = prob(daten, mu) / high_prob (daten);
+    cout << "numerator = "  << prob(daten, mu) <<
+       ", denominator = " << high_prob (daten) << endl;
     cout << "Ratio = " << ratio << 
       ", log ratio = " << -2.0* log(ratio) << endl;
     z = (-2.0 * log(ratio) - ndof) / sqrt(2.0 * ndof);
